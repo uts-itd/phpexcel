@@ -2058,6 +2058,13 @@ class PHPExcel_Calculation
             'argumentCount' => '2-3'
         )
     );
+    protected $var;
+    public function __set(string $name, mixed $value): void {
+        $this->var[$name] = $value;
+    }
+    public function __get(string $name): mixed {
+        return $this->var[$name] ?? null;
+    }
 
     //    Internal functions used for special control purposes
     private static $controlFunctions = array(

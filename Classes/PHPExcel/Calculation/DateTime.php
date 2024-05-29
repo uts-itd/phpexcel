@@ -935,7 +935,7 @@ class PHPExcel_Calculation_DateTime
         $startDate    = PHPExcel_Calculation_Functions::flattenSingleValue($startDate);
         $endDate    = PHPExcel_Calculation_Functions::flattenSingleValue($endDate);
         //    Flush the mandatory start and end date that are referenced in the function definition, and get the optional days
-        $dateArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
+        $dateArgs = PHPExcel_Calculation_Functions::flattenArray([$startDate, $endDate]);
         array_shift($dateArgs);
         array_shift($dateArgs);
 
@@ -1022,7 +1022,7 @@ class PHPExcel_Calculation_DateTime
         $startDate    = PHPExcel_Calculation_Functions::flattenSingleValue($startDate);
         $endDays    = PHPExcel_Calculation_Functions::flattenSingleValue($endDays);
         //    Flush the mandatory start date and days that are referenced in the function definition, and get the optional days
-        $dateArgs = PHPExcel_Calculation_Functions::flattenArray(func_get_args());
+        $dateArgs = PHPExcel_Calculation_Functions::flattenArray([$startDate, $endDays]);
         array_shift($dateArgs);
         array_shift($dateArgs);
 

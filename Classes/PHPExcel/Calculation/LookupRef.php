@@ -382,7 +382,7 @@ class PHPExcel_Calculation_LookupRef
             return 0;
         }
 
-        $args = func_get_args();
+        $args = [$cellAddress, $rows, $columns, $height, $width];
         $pCell = array_pop($args);
         if (!is_object($pCell)) {
             return PHPExcel_Calculation_Functions::REF();

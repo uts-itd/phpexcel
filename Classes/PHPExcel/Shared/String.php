@@ -578,7 +578,7 @@ class PHPExcel_Shared_String
     public static function Substring($pValue = '', $pStart = 0, $pLength = 0)
     {
         if (self::getIsMbstringEnabled()) {
-            return mb_substr($pValue, $pStart, $pLength, 'UTF-8');
+            return mb_substr($pValue ?? '', $pStart, $pLength, 'UTF-8');
         }
 
         if (self::getIsIconvEnabled()) {
